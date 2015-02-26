@@ -62,10 +62,13 @@ public class LoadTesterImpl implements LoadTester {
                                 LOG.debug("No data available");
                             }
                         } catch (DataProviderException ex) {
+                            ex.printStackTrace();
                             LOG.error("Error retrieving data", ex);
                         } catch (DataSubmissionException ex) {
+                            ex.printStackTrace();
                             LOG.error("Error submitting data", ex);
                         } catch (LoggerException ex) {
+                            ex.printStackTrace();
                             LOG.error("Error logging result", ex);
                         }
                     }
