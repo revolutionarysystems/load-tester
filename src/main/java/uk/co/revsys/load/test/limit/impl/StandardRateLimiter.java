@@ -1,10 +1,12 @@
-package uk.co.revsys.load.test.limit;
+package uk.co.revsys.load.test.limit.impl;
 
-public class RateLimiterImpl implements RateLimiter{
+import uk.co.revsys.load.test.limit.RateLimiter;
+
+public class StandardRateLimiter implements RateLimiter{
 
     private final com.google.common.util.concurrent.RateLimiter limiter;
 
-    public RateLimiterImpl(double permitsPerSecond) {
+    public StandardRateLimiter(double permitsPerSecond) {
         limiter = com.google.common.util.concurrent.RateLimiter.create(permitsPerSecond);
     }
     

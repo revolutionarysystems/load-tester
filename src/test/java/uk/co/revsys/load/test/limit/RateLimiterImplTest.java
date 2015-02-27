@@ -1,6 +1,7 @@
 
 package uk.co.revsys.load.test.limit;
 
+import uk.co.revsys.load.test.limit.impl.StandardRateLimiter;
 import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -32,7 +33,7 @@ public class RateLimiterImplTest {
 
     @Test
     public void testBlock() {
-        RateLimiterImpl limiter = new RateLimiterImpl(1);
+        StandardRateLimiter limiter = new StandardRateLimiter(1);
         long start = new Date().getTime();
         int count = 0;
         while(new Date().getTime() - start < 2000){
